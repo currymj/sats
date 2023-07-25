@@ -2,6 +2,7 @@ package org.spectrumauctions.sats.core.model.lsvm;
 
 import org.spectrumauctions.sats.core.model.DefaultModel;
 import org.spectrumauctions.sats.core.util.random.RNGSupplier;
+import org.spectrumauctions.sats.core.util.random.IntegerInterval;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,5 +45,9 @@ public class LocalSynergyValueModel extends DefaultModel<LSVMWorld, LSVMBidder> 
     
     public void setLegacyLSVM(boolean legacyLSVM) {
         worldSetupBuilder.setLegacyLSVM(legacyLSVM);
+    }
+
+    public void setNumberOfColumnsInterval(int numberOfColumns) {
+        worldSetupBuilder.setNumberOfColumnsInterval(new IntegerInterval(numberOfColumns, numberOfColumns));
     }
 }
