@@ -1,6 +1,7 @@
 package org.spectrumauctions.sats.core.model.gsvm;
 
 import org.spectrumauctions.sats.core.model.DefaultModel;
+import org.spectrumauctions.sats.core.util.random.IntegerInterval;
 import org.spectrumauctions.sats.core.util.random.RNGSupplier;
 
 import java.util.Collection;
@@ -48,4 +49,9 @@ public class GlobalSynergyValueModel extends DefaultModel<GSVMWorld, GSVMBidder>
     public void setLegacyGSVM(boolean legacyGSVM) {
         worldSetupBuilder.setLegacyGSVM(legacyGSVM);
     }
+
+    public void setSizeInterval(int numItems) {
+        worldSetupBuilder.setSizeInterval(new IntegerInterval(numItems, numItems));
+    }
+
 }

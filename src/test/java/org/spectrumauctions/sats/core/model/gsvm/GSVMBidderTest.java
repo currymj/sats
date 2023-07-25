@@ -223,6 +223,17 @@ public class GSVMBidderTest {
     }
 
     /**
+    * Tests custom number of items setup
+     */
+
+    public void testNumberOfItemsSetup() {
+        GlobalSynergyValueModel model2 = new GlobalSynergyValueModel();
+        GSVMWorld world2 = model2.createWorld(983742L);
+        model2.setSizeInterval(2);
+        Assert.assertEquals(world2.getNumberOfGoods(), 2 * 2);
+    }
+
+    /**
      * Legacy GSVM: Test a custom world setup
      */
     @Test
