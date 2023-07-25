@@ -229,10 +229,11 @@ public class GSVMBidderTest {
     @Test
     public void testNumberOfItemsSetup() {
         GlobalSynergyValueModel model2 = new GlobalSynergyValueModel();
-        model2.setNumberOfNationalBidders();
-        model2.setSizeInterval(2);
+        model2.setNumberOfNationalBidders(1);
+        model2.setNumberOfRegionalBidders(1);
+        model2.setSizeInterval(1);
         GSVMWorld world2 = model2.createWorld(983742L);
-        Assert.assertEquals(2 * 2, world2.getNumberOfGoods());
+        Assert.assertEquals(3, world2.getNumberOfGoods());
     }
 
     /**
