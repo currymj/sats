@@ -80,12 +80,15 @@ public class LSVMStandardMIPTest {
 		testTotalValue(population, allocation);
 	}
 
-	private void testLSVMNumberItems(Long seed) {
+	@Test
+	public void testLSVMNumberItems() {
 		LocalSynergyValueModel model = new LocalSynergyValueModel();
 		model.setLegacyLSVM(true);
-		model.setNumberOfColumnsInterval(5);
-		LSVMWorld world = model.createWorld(seed);
-		Assert.assertEquals(world.getNumberOfGoods(), 5);
+		model.setNumberOfNationalBidders(1);
+		model.setNumberOfRegionalBidders(1);
+		model.setNumberOfColumnsInterval(2);
+		LSVMWorld world = model.createWorld(1498246131808L);
+		Assert.assertEquals(world.getNumberOfGoods(), 6);
 	}
 
 	private void testTotalValue(List<LSVMBidder> population, Allocation allocation) {
