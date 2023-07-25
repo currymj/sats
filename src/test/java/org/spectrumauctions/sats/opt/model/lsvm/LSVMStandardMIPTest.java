@@ -86,7 +86,6 @@ public class LSVMStandardMIPTest {
 		model.setNumberOfColumnsInterval(5);
 		LSVMWorld world = model.createWorld(seed);
 		Assert.assertEquals(world.getNumberOfGoods(), 5);
-
 	}
 
 	private void testTotalValue(List<LSVMBidder> population, Allocation allocation) {
